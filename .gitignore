@@ -1,0 +1,33 @@
+# Forge files
+cache/
+out/
+
+# Coverage
+coverage/
+
+# Ignores development broadcast logs
+!/broadcast
+/broadcast/*/31337/
+/broadcast/*/84532/
+!/broadcast/*/84532/run-latest.json
+/broadcast/*/8453/
+!/broadcast/*/8453/run-latest.json
+/broadcast/**/dry-run/
+
+# Forge files
+cache/
+out/
+storage/
+
+# Gas snapshot
+.gas-snapshot/
+
+# Dotenv file
+.env*
+!.env.example
+
+# preset scripts
+.preset.sh
+
+# appleeeee
+.DS_Store
