@@ -19,7 +19,7 @@ contract BridgeL1ToL2 is Script {
 
     // L1 Standard Bridge address on Sepolia
     // Note: This address needs to be confirmed for the Sepolia <> Ozean bridge
-    address constant L1_STANDARD_BRIDGE = 0x4200000000000000000000000000000000000010;
+    address constant L1_STANDARD_BRIDGE = 0x8f42BD64b98f35EC696b968e3ad073886464dEC1;
 
     function run() public {
         // Get the bridging parameters from environment variables or use defaults

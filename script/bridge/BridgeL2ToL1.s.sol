@@ -25,10 +25,12 @@ contract BridgeL2ToL1 is Script {
         uint256 privateKey = vm.envUint("PRIVATE_KEY");
         address deployer = vm.addr(privateKey);
         address l2TokenAddress = vm.envAddress("L2_TOKEN_ADDRESS");
+        address l1TokenAddress = vm.envAddress("L1_TOKEN_ADDRESS");
         uint256 bridgeAmount = vm.envOr("BRIDGE_AMOUNT", DEFAULT_AMOUNT);
         
         console.log("Sender address:", deployer);
         console.log("L2 Token address:", l2TokenAddress);
+        console.log("L1 Token address:", l1TokenAddress);
         console.log("Amount to bridge back to L1:", bridgeAmount);
 
         // Start broadcasting transactions
@@ -44,11 +46,12 @@ contract BridgeL2ToL1 is Script {
         console.log("Current balance:", balance);
         
         // Bridge the tokens back to L1
-        bridge.withdrawERC20(
-            l2TokenAddress,
+        bridge.bridgeERC20(
+            l2TokenAddress,   
+            l1TokenAddress,   
             bridgeAmount,
             DEFAULT_L1_GAS,
-            "" // No extra data
+            ""                
         );
         
         console.log("Withdrawal initiated from L2 to L1");
