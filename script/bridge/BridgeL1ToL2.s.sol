@@ -14,11 +14,10 @@ import "forge-std/console.sol";
  */
 contract BridgeL1ToL2 is Script {
     // Default parameters
-    uint32 constant DEFAULT_L2_GAS = 200000; // Default gas limit on L2
-    uint256 constant DEFAULT_AMOUNT = 1000 * 10**18; // 1000 tokens with 18 decimals
+    uint32 constant DEFAULT_L2_GAS = 200000; 
+    uint256 constant DEFAULT_AMOUNT = 1000 * 10**18; 
 
     // L1 Standard Bridge address on Sepolia
-    // Note: This address needs to be confirmed for the Sepolia <> Ozean bridge
     address constant L1_STANDARD_BRIDGE = 0x8f42BD64b98f35EC696b968e3ad073886464dEC1;
 
     function run() public {
@@ -56,7 +55,7 @@ contract BridgeL1ToL2 is Script {
             l2TokenAddress,
             bridgeAmount,
             DEFAULT_L2_GAS,
-            "" // No extra data
+            "" 
         );
         
         console.log("Tokens bridged to L2");
